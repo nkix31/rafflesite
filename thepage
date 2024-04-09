@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hard-Luck Huckleberry’s Raffle Evicting Vagabondage</title>
+  <style>
+    /* Your CSS styles here */
+  </style>
+</head>
+<body>
+  <h1>Hard-Luck Huckleberry’s Raffle Evicting Vagabondage</h1>
+  <p>Entry Fee: $1 /ticket<br>
+  PRIZE: ONE (1) VISA E-GIFT valued at $150.00<br>
+  Odds: 1 in 500&nbsp;<sup>*</sup><br>
+  Prize awarded Friday, April 12, 2024<sup>*</sup></p>
+  <h2>Entry Registration</h2>
+  <form id="entryForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Preferred Moniker" required><br><br>
+    <label for="contact">Contact:</label><br>
+    <input type="text" id="phone" name="phone" placeholder="(xxx)xxx-xxxx" pattern="\(\d{3}\)\d{3}-\d{4}">
+    <input type="text" id="email" name="email" placeholder="example@host.com"><br>
+    <input type="checkbox" id="phoneCheckbox" class="checkbox" name="contactType">
+    <label class="checkbox-label" for="phoneCheckbox">Phone</label>
+    <input type="checkbox" id="emailCheckbox" class="checkbox" name="contactType">
+    <label class="checkbox-label" for="emailCheckbox">E-mail</label><br><br>
+    <label for="ticketID">Ticket ID:</label><br>
+    <input type="text" id="ticketID" name="ticketID" placeholder="case-sensitive!" required><br><br>
+    <input type="checkbox" id="infoCheckbox" name="infoConsent">
+    <label for="infoCheckbox">Please do not make use of my information in future attempts to entertain me.</label><br><br>
+    <button type="submit">Enter!</button>
+  </form>
+
+  <script>
+    document.getElementById("entryForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var entry = {
+        name: document.getElementById("name").value,
+        contact: {
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value
+        },
+        ticketID: document.getElementById("ticketID").value,
+        infoConsent: document.getElementById("infoCheckbox").checked
+      };
+      
+      console.log(entry); // You can further process or submit this 'entry' object as needed
+    });
+  </script>
+
+  <!-- Your tooltip code here -->
+
+</body>
+</html>
